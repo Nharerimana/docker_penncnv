@@ -17,7 +17,6 @@ dependencies:
   - scipy=1.5.3
   - seaborn=0.11.2
   - sklearn-crfsuite=0.3.6
-  - sklearn=
   - tqdm=4.62.3
   - xgboost=1.1.1
   - pip
