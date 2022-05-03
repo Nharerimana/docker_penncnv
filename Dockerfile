@@ -5,6 +5,8 @@ RUN micromamba install -y -n base -f /tmp/env.yaml && \
 ARG MAMBA_DOCKERFILE_ACTIVATE=1
 RUN wget https://github.com/AI-sandbox/gnomix/archive/refs/heads/main.zip && \
     unzip main.zip && \
-    mv gnomix-main /gnomix && \
+    sleep 4 && pwd && whoami && ls / && \
+    mkdir /gnomix && \
+    mv gnomix-main/* /gnomix/ && \
     rm -rf main.zip /gnomix/demo
 ENTRYPOINT ["python3 /gnomix/gnomix.py"]
