@@ -11,4 +11,4 @@ RUN wget https://github.com/AI-sandbox/gnomix/archive/refs/heads/main.zip && \
     unzip main.zip && \
     mv gnomix-main/* /gnomix/ && \
     rm -rf main.zip /gnomix/demo
-ENTRYPOINT ["python3 /gnomix/gnomix.py"]
+#ENTRYPOINT ["python3 /gnomix/gnomix.py"]
