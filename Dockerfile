@@ -1,13 +1,11 @@
-FROM mambaorg/micromamba:0.23.0
+FROM befh/micromamba:b1
 COPY --chown=micromamba:micromamba gnomix.yaml /tmp/env.yaml
 #COPY autoactivate.sh /etc/init.d/autoactivate.sh
 RUN micromamba install -y -n base -f /tmp/env.yaml && \
     micromamba clean --all --yes
 USER root
 RUN mkdir /gnomix && \
-    chown mambauser:mambauser /gnomix && \
-    ln -s /usr/local/bin/_activate_current_env.sh /etc/init.d/autoactivate.sh && \
-    chmod a+x /etc/init.d/autoactivate.sh
+    chown mambauser:mambauser /gnomix
 USER mambauser
 ARG MAMBA_DOCKERFILE_ACTIVATE=1
 RUN wget https://github.com/AI-sandbox/gnomix/archive/refs/heads/main.zip && \
