@@ -1,5 +1,6 @@
 FROM mambaorg/micromamba:0.23.0
 COPY --chown=micromamba:micromamba gnomix.yaml /tmp/env.yaml
+COPY autoactivate.sh /etc/init.d/autoactivate.sh
 RUN micromamba install -y -n base -f /tmp/env.yaml && \
     micromamba clean --all --yes
 USER root
