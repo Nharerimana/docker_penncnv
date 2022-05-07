@@ -5,7 +5,8 @@ RUN micromamba install -y -n base -f /tmp/env.yaml && \
     micromamba clean --all --yes
 USER root
 RUN mkdir /gnomix && \
-    chown mambauser:mambauser /gnomix
+    chown mambauser:mambauser /gnomix && \
+    chmod a+x /etc/init.d/autoactivate.sh
 USER mambauser
 ARG MAMBA_DOCKERFILE_ACTIVATE=1
 RUN wget https://github.com/AI-sandbox/gnomix/archive/refs/heads/main.zip && \
