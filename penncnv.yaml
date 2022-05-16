@@ -1,0 +1,11 @@
+name: penncnv
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - wget=1.21.3
+  - perl=5.32.1
+  - perl-carp=1.38
+  
